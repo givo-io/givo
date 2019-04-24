@@ -63,10 +63,35 @@ Storage = {
     return my_offers;
   },
 
+  // TODO: Not only store id but also what he likes
+  set_referer: function(reference_id, referer, referer_interest){
+    key = "referer";
+    referer_map = {};
+    if(localStorage.getItem(key) != null){
+      referer_map = JSON.parse(localStorage.getItem(key));
+    }
+    // TODO: Make referer an array as multiple people can refer the same reference_id
+    referer_map[reference_id] = {
+      referer: referer,
+      refer_interest: refer_interest
+    };
+    localStorage.setItem(key, JSON.stringify(referer_map));
+  },
+
+  get_referer: function(reference_id){
+    key = "referer";
+    referer_map = JSON.parse(localStorage.getItem(key));
+    if(referer_map == null){
+      return null;
+    }
+    return referer_map[reference_id][referer], referer_map[reference_id][referer_interest];
+  },
+
   reset_memory: function() {
-    localStorage.removeItem("my_interest");
-    localStorage.removeItem("my_id");
-    lacalStorage.removeItem("refer");
+    key_list = ["my_interest", "my_id", "refer", "chained"];
+     key_list.forEach(function(val){
+       localStorage.removeItem(val);
+     });
   }
 
 };

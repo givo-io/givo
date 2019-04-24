@@ -8,9 +8,9 @@ function load_my_offers() {
     crossDomain: true,
     success: function(data) {
       if (data == null) {
-        return
+        return;
       }
-      data.forEach(listMyOffer)
+      data.forEach(listMyOffer);
     }
   });
 }
@@ -47,8 +47,8 @@ function add_offer() {
 }
 
 (function($) {
-  URL = "http://" + window.location.host
-  console.log('url', URL)
+  URL = "http://" + window.location.host;
+  console.log('url', URL);
   // Document Ready
   $(document).ready(function() {
     load_my_offers();

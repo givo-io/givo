@@ -38,7 +38,7 @@ function send_interest(my_interest, offer){
       }
     });
 }
-
+// TODO: create a map of que of reference_id to referer to use it for cycle_propagate
 function send_my_interests_reference(offer) {
   my_interests = Storage.get_my_interests();
   my_interests.forEach(function(interest){
@@ -59,11 +59,6 @@ function refer_interest(interested_good_id, reference_id){
     });
 }
 
-function Popup(offer, myOfferId) {
-  $("#model-offer-name").text(offer.offer.name);
-  $("#model-offer-details").text(offer.offer.details);
-  $("#match-found").show();
-}
 
 function item_liked(cntr) {
   offer = Data[cntr];
@@ -92,20 +87,29 @@ function send_interest(offer) {
 
 
 function initiate_cycle(offer) {
-  Popup(offer);
-  $.ajax({
-    url: URL + '/cycle',
-    type: 'POST',
-    data: JSON.stringify(offer),
-    dataType: 'json',
-    contentType: 'application/json',
-    crossDomain: true,
-    success: function(result) {
-      console.log(result);
-    }
-  });
-  loadOffers();
+  Popup(
+    offer.referer_interest,
+    "Please drop This good to the following location",
+    offer.name,
+    "You will get This good soon!!"
+  );
+  App.contract.cycle_formed(
+    offer.owner,
+    offer.id,
+    offer.referer_interest,
+    offer.referer,
+    App.options,
+    function(err, result) {
+      if (!err) {
+        console.log("Cycle Formed!");
+      } else {
+        console.log(err);
+      }
+    });
+
 }
+
+
 
 function add_interest_button(id) {
   App.contract.all_goods(id,
@@ -121,7 +125,7 @@ function add_interest_button(id) {
 }
 
 
-function loadInterests() {
+function load_interests() {
   my_interests = Storage.get_my_interests();
   my_interests.forEach(add_interest_button);
 }
@@ -195,7 +199,7 @@ function populate_offers() {
 async function on_contract_loaded() {
   populate_offers();
   Events.init_events();
-  loadInterests();
+  load_interests();
 }
 
 (function($) {
