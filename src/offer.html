@@ -1,163 +1,169 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<!-- Required meta tags -->
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-		<!-- Main CSS -->
-		<link rel="stylesheet" href="assets/css/main.min.css">
+	<!-- Bootstrap CSS (https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css) -->
+	<link rel="stylesheet" href="assets/css/lib/bootstrap.min.css" crossorigin="anonymous">
 
-		<!-- Google fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Asap:400,700|Righteous" rel="stylesheet">
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="assets/css/main.min.css">
 
-		<title>givo.io | The Smart Economy</title>
-	</head>
+	<!-- Google fonts (https://fonts.googleapis.com/css?family=Asap:400,700|Righteous) -->
+	<link href="assets/css/lib/google_fonts.css" rel="stylesheet">
 
-	<body>
-		<header class="header">
-			<nav class="navbar">
-				<div class="navbar__container">
-					<button class="navbar-toggler navbar-brand" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
-						<img src="assets/img/givo-logo.png" width="134" height="auto" alt="givo.io">
-					</button>
+	<title>givo.io | The Smart Economy</title>
+</head>
 
-					<ul id="my-interest" class="interests">
-						<!--
+<body>
+	<header class="header">
+		<nav class="navbar">
+			<div class="navbar__container">
+				<button class="navbar-toggler navbar-brand" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+					<img src="assets/img/givo-logo.png" width="134" height="auto" alt="givo.io">
+				</button>
+
+				<ul id="my-interest" class="interests">
+					<!--
 						<li id="my-intrest-1" onclick="delete_intrest(this.id)" class="filled" style="background-image: url(https://source.unsplash.com/80x80/?service);">+</li>
 						<li id="my-intrest-2" onclick="delete_intrest(this.id)" class="filled" style="background-image: url(https://source.unsplash.com/80x80/?product);">+</li>
 						<li id="my-intrest-3" onclick="delete_intrest(this.id)">+</li>
 						<li id="my-intrest-4" onclick="delete_intrest(this.id)">+</li>
 						<li id="my-intrest-5" onclick="delete_intrest(this.id)">+</li>
 					-->
+				</ul>
+
+				<div class="navbar-menu collapse navbar-collapse" id="navbar-menu">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="search.html">Explore</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="offer.html">My Offer <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="login.html">Sign in</a>
+						</li>
 					</ul>
-
-					<div class="navbar-menu collapse navbar-collapse" id="navbar-menu">
-						<ul class="navbar-nav mr-auto">
-							<li class="nav-item">
-								<a class="nav-link" href="search.html">Explore</a>
-							</li>
-							<li class="nav-item active">
-								<a class="nav-link" href="offer.html">My Offer <span class="sr-only">(current)</span></a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="login.html">Sign in</a>
-							</li>
-						</ul>
-					</div>
 				</div>
-			</nav>
-		</header>
+			</div>
+		</nav>
+	</header>
 
-		<main class="main">
-			<div class="main__container">
-				<div id="my-offers" class="my-offers">
+	<main class="main">
+		<div class="main__container">
+			<div id="my-offers" class="my-offers">
 
-				</div>
+			</div>
 
-				<div class="offer-forms">
+			<div class="offer-forms">
 
-					<div class="offer-form">
-						<form class="offer-form__content">
-							<h1 class="offer-form__title">What can you offer? <small>(equal in value to one hour)</small></h1>
+				<div class="offer-form">
+					<form class="offer-form__content">
+						<h1 class="offer-form__title">What can you offer? <small>(equal in value to one hour)</small></h1>
 
-							<div class="form-group">
-								<input class="form-control--title" type="text" id="offer-title" placeholder="Title..." >
-								<textarea class="form-control--description" id="offer-description" placeholder="Description..." rows="3"></textarea>
-								<input class="form-control--location" type="text" placeholder="Location...">
+						<div class="form-group">
+							<input class="form-control--title" type="text" id="offer-title" placeholder="Title...">
+							<textarea class="form-control--description" id="offer-description" placeholder="Description..." rows="3"></textarea>
+							<input class="form-control--location" type="text" placeholder="Location...">
 							<div class="form-group">
 
-							<div class="form-group--upload">
-								<h3>Images...</h3>
-								<div class="form-control--image">
-									<input type="file" class="custom-file-input">
-									<label class="custom-file-label" for="customFile">+</label>
+								<div class="form-group--upload">
+									<h3>Images...</h3>
+									<div class="form-control--image">
+										<input type="file" class="custom-file-input">
+										<label class="custom-file-label" for="customFile">+</label>
+									</div>
+									<div class="form-control--image">
+										<input type="file" class="custom-file-input">
+										<label class="custom-file-label" for="customFile">+</label>
+									</div>
+									<div class="form-control--image">
+										<input type="file" class="custom-file-input">
+										<label class="custom-file-label" for="customFile">+</label>
+									</div>
 								</div>
-								<div class="form-control--image">
-									<input type="file" class="custom-file-input">
-									<label class="custom-file-label" for="customFile">+</label>
+
+								<div class="form-group">
+									<input class="form-control--tags" type="text" placeholder="Tags...">
+									<input class="form-control--category" type="text" placeholder="Category...">
 								</div>
-								<div class="form-control--image">
-									<input type="file" class="custom-file-input">
-									<label class="custom-file-label" for="customFile">+</label>
+
+								<div class="btn btn-secondary" onclick="add_offer()">Submit</div>
+								<a class="btn-next" href="login.html">next &raquo;</a>
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</main>
+
+	<footer class="footer">
+		<div class="footer__container">
+			<div class="footer__wrapper">
+				<div class="footer-nav">
+					<ol class="pagination-bullets">
+						<li></li>
+						<li class="active"></li>
+						<li></li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<div class="match-found" id="match-found" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-full" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="match">Match found!</h3>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+
+				<div class="modal-body p-4" id="result">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui explicabo optio assumenda, repellendus, a rerum!</p>
+					<div class="row">
+						<div class="offer">
+							<div class="offer__content">
+								<div class="offer__image" style="background-image: url(https://source.unsplash.com/700x700/?service);"></div>
+								<div class="offer__body">
+									<h3 class="offer__title">Shoes</h3>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, nam?</p>
 								</div>
 							</div>
-
-							<div class="form-group">
-								<input class="form-control--tags" type="text" placeholder="Tags...">
-								<input class="form-control--category" type="text" placeholder="Category...">
-							</div>
-							
-							<div class="btn btn-secondary" onclick="add_offer()">Submit</div>
-							<a class="btn-next" href="login.html">next &raquo;</a>
-						</form>
-					</div>
-
-				</div>
-			</div>
-		</main>
-
-		<footer class="footer">
-			<div class="footer__container">
-				<div class="footer__wrapper">
-					<div class="footer-nav">
-						<ol class="pagination-bullets">
-							<li></li>
-							<li class="active"></li>
-							<li></li>
-						</ol>
-					</div>
-				</div>
-			</div>
-		</footer>
-
-<div class="match-found" id="match-found" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-dialog modal-full" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h3 class="match">Match found!</h3>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">×</span>
-				</button>
-			</div>
-
-			<div class="modal-body p-4" id="result">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui explicabo optio assumenda, repellendus, a rerum!</p>
-				<div class="row">
-					<div class="offer">
-						<div class="offer__content">
-							<div class="offer__image" style="background-image: url(https://source.unsplash.com/700x700/?service);"></div>
-							<div class="offer__body">
-								<h3 class="offer__title">Shoes</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, nam?</p>
+						</div>
+						<div class="request">
+							<div class="request__content">
+								<div class="request__image" style="background-image: url(https://source.unsplash.com/700x700/?product);"></div>
+								<div class="request__body">
+									<h3 class="request__title">Something</h3>
+									<p>Provident, nam? Lorem ipsum dolor sit amet adipisicing elit.</p>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="request">
-						<div class="request__content">
-							<div class="request__image" style="background-image: url(https://source.unsplash.com/700x700/?product);"></div>
-							<div class="request__body">
-								<h3 class="request__title">Something</h3>
-								<p>Provident, nam? Lorem ipsum dolor sit amet adipisicing elit.</p>
-							</div>
-						</div>
-					</div>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
 				</div>
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
 			</div>
 		</div>
 	</div>
-</div>
 
-		<!-- Optional JavaScript -->
-		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-		<script src="assets/js/main_offer.js"></script>
-		<script src="assets/js/common.js"></script>
-	</body>
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="assets/js/lib/jquery.min.js" crossorigin="anonymous"></script>
+	<script src="assets/js/lib/popper.min.js" crossorigin="anonymous"></script>
+	<script src="assets/js/lib/bootstrap.min.js" crossorigin="anonymous"></script>
+
+	<script src="assets/js/utils.js"></script>
+	<script src="assets/js/lib/web3.js"></script>
+	<script src="assets/js/storage.js"></script>
+	<script src="assets/js/web3_app.js"></script>
+	<script src="assets/js/main_offer.js"></script>
+</body>
+
 </html>
