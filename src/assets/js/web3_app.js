@@ -4,7 +4,7 @@
 
 App = {
   account: '',
-  address: '0x70561d1ea945298fb9b12575d277c77c97eec5e9',
+  address: '0x1cfC19Ff4A875CEFA55095eC3840Ba7683c1fe7c',
   contract: '',
   options: {
     from: this.account
@@ -62,6 +62,11 @@ App = {
   get_offer_details: async function(product_id) {
     offer_details = await promisify(cb => App.contract.all_goods(product_id, App.options, cb));
     return [offer_details[3], offer_details[4], offer_details[5]];
+  },
+
+  get_offers: async function(id) {
+    offers = promisify(cb => App.contract.get_offers(id, App.options, cb));
+    return await offers;
   }
 
 };

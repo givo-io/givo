@@ -40,6 +40,7 @@ function send_interest(my_interest, offer){
 }
 // TODO: create a map of que of reference_id to referer to use it for cycle_propagate
 function send_my_interests_reference(offer) {
+  Storage.set_referer(offer.owner, offer.referer, offer.refer_interest);
   my_interests = Storage.get_my_interests();
   my_interests.forEach(function(interest){
       refer_interest(interest, offer.owner);

@@ -43,24 +43,47 @@ Events = {
     });
   },
 
+  cycle_propagate: function(if_owner, if_good, if_receiver, then_good, then_receiver){
+    App.contract.cycle_propagate(
+      if_owner,
+      if_good,
+      if_receiver,
+      then_good,
+      then_receiver,
+      App.options,
+      function(err, result) {
+        if (!err) {
+          console.log("Cycle Propagated!");
+        } else {
+          console.log(err);
+        }
+      });
+  },
+
   react_on_chained: async function(result) {
     if(result.args.if_owner == await App.get_id()){
-      Storage.set_last_block("chained",result.blockNumber+1);
-      my_offer_details = await App.get_offer_details(result.args.if_good);
-      Popup(
-        my_offer_details[0],
-        "Please drop This good to the" +result.args.if_receiver+ "'s location",
-        result.args.then_good,
-        "You will get This good soon!!"
+      referer_interest = result.args.if_good;
+      referer = result.args.if_owner;
+    } else {
+      referer_details = Storage.get_referer(result.args.if_owner);
+      cycle_propagate(
+        result.args.if_owner,
+        result.args.if_good,
+        result.args.if_receiver,
+        referer_details.referer_interest,
+        referer_details.referer
       );
+      referer_interest = referer_details.referer_interest;
+      referer = result.args.if_owner;
     }
-    /*referer, referer_interest = Storage.get_referer(result.args.if_owner);
+    my_offer_details = await App.get_offer_details(referer_interest);
+    Storage.set_last_block("chained",result.blockNumber+1);
     Popup(
-      referer_interest,
+      my_offer_details[0],
       "Please drop This good to the" +referer+ "'s location",
       result.args.then_good,
       "You will get This good soon!!"
-    );*/
+    );
   },
 
   init_events: async function() {

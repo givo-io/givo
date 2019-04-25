@@ -17,8 +17,7 @@ function add_offer_to_list(id, name, image_url, details) {
 
 async function get_my_offers() {
   id = await App.get_id();
-  my_offers = promisify(cb => App.contract.get_offers(id, App.options, cb));
-  return await my_offers;
+  return App.get_offers(id);
 }
 
 async function get_offer_details(product_id) {
@@ -58,8 +57,6 @@ async function on_contract_loaded() {
 }
 
 (function($) {
-  URL = "http://" + window.location.host;
-  console.log('url', URL);
   // Document Ready
   $(document).ready(function() {
     App.init(on_contract_loaded);

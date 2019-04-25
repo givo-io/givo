@@ -63,7 +63,6 @@ Storage = {
     return my_offers;
   },
 
-  // TODO: Not only store id but also what he likes
   set_referer: function(reference_id, referer, referer_interest){
     key = "referer";
     referer_map = {};
@@ -84,7 +83,7 @@ Storage = {
     if(referer_map == null){
       return null;
     }
-    return referer_map[reference_id][referer], referer_map[reference_id][referer_interest];
+    return referer_map[reference_id];
   },
 
   reset_memory: function() {
