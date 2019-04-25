@@ -4,7 +4,7 @@
 
 App = {
   account: '',
-  address: '0x1cfC19Ff4A875CEFA55095eC3840Ba7683c1fe7c',
+  address: '0xdb1671081de80a818ed5be2a61c92c05e56d84ed',
   contract: '',
   options: {
     from: this.account
