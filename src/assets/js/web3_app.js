@@ -59,10 +59,9 @@ App = {
     }
   },
 
-  get_offers: async function(id) {
-    offers = promisify(cb => App.contract.get_offers(id, App.option, cb));
-    console.log(offers);
-    return await offers;
+  get_offer_details: async function(product_id) {
+    offer_details = await promisify(cb => App.contract.all_goods(product_id, App.options, cb));
+    return [offer_details[3], offer_details[4], offer_details[5]];
   }
 
 };

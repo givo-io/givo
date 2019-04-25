@@ -46,8 +46,9 @@ Events = {
   react_on_chained: async function(result) {
     if(result.args.if_owner == await App.get_id()){
       Storage.set_last_block("chained",result.blockNumber+1);
+      my_offer_details = await App.get_offer_details(result.args.if_good);
       Popup(
-        result.args.if_good,
+        my_offer_details[0],
         "Please drop This good to the" +result.args.if_receiver+ "'s location",
         result.args.then_good,
         "You will get This good soon!!"

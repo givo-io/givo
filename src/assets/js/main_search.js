@@ -86,9 +86,10 @@ function send_interest(offer) {
 }
 
 
-function initiate_cycle(offer) {
+async function initiate_cycle(offer) {
+  my_offer_details = await App.get_offer_details(offer.referer_interest);
   Popup(
-    offer.referer_interest,
+    my_offer_details[0],
     "Please drop This good to the following location",
     offer.name,
     "You will get This good soon!!"
