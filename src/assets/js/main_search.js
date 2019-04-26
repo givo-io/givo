@@ -11,7 +11,7 @@ function item_disliked(cntr) {
 
   if (cntr == (Data.length-1)) {
     if (offer.is_reference == true) {
-      send_my_interest_reference(offer);
+      send_my_interests_reference(offer);
       Storage.set_last_block("refer", offer.block_number+1);
     }
     return;
@@ -20,7 +20,7 @@ function item_disliked(cntr) {
   next_offer = Data[cntr + 1];
   if (next_offer.owner != offer.owner) {
     console.log("Done");
-    send_my_interest_reference(offer);
+    send_my_interests_reference(offer);
     Storage.set_last_block("refer", offer.block_number+1);
   }
   return;
@@ -48,7 +48,7 @@ function send_my_interests_reference(offer) {
 }
 
 function refer_interest(interested_good_id, reference_id){
-  App.contract.refer_intrest(interested_good_id, reference_id,
+  App.contract.refer_interest(interested_good_id, reference_id,
     App.options,
     function(err, result) {
       if (!err) {

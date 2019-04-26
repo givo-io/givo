@@ -66,7 +66,7 @@ Events = {
       referer = result.args.if_owner;
     } else {
       referer_details = Storage.get_referer(result.args.if_owner);
-      cycle_propagate(
+      Events.cycle_propagate(
         result.args.if_owner,
         result.args.if_good,
         result.args.if_receiver,

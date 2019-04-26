@@ -72,7 +72,7 @@ Storage = {
     // TODO: Make referer an array as multiple people can refer the same reference_id
     referer_map[reference_id] = {
       referer: referer,
-      refer_interest: refer_interest
+      referer_interest: referer_interest
     };
     localStorage.setItem(key, JSON.stringify(referer_map));
   },
